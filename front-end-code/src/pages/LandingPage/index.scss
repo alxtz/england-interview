@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #002499;
+  height: 100%;
+}
+
+.slotWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(184,184,184,1) 0%,
+      rgba(199,199,199,1) 47%,
+      rgba(172,172,172,1) 100%
+    );
+  width: 700px;
+  height: 490px;
+  // border: 1px solid rgba(250, 250, 250, 1);
+  border-radius: 20px;
+  box-shadow:
+    0 0 4px 3px rgba(0, 0, 0, 0.2),
+    inset 0 0 3px 4px rgba(255, 255, 255, 0.3);
+}
+
+.slotItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 2px solid red;
+  width: 210px;
+  height: 441px;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 2px 2px rgba(80, 80, 80, 0.5);
+  background:
+    linear-gradient(
+      0deg,
+      #ADADAD 0%,
+      #F0F0F0 47%,
+      #ADADAD 100%
+    );
+  box-sizing: border-box;
+}
+
+.slotBlackBorder {
+  width: 185px;
+  height: 416px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-shadow:
+    0 0 2px 2px rgba(70, 70, 70, 0.6),
+    inset 0 0 2px 2px rgba(70, 70, 70, 0.6);
+  padding: 1px;
+  position: relative;
+}
+
+.ghostBlack {
+  width: 100px;
+  border-radius: 2px;
+  background:
+    linear-gradient(
+      0deg, rgba(8,5,5,1) 0%,
+      rgba(201,201,201,1) 50%,
+      rgba(8,5,5,1) 100%
+    );
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+}
+.payload {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+  position: absolute;
+  width: 154px;
+  height: 387px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #EDEDED;
+  box-shadow:
+    0 0 2px 2px rgba(255, 255, 255, 0.3);
+}
+.gameImg {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 146px;
+  height: 108px;
+  box-shadow:
+    0 0 1px 1px rgba(0, 0, 0, 1);
+}
