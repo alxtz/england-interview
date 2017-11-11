@@ -1,37 +1,21 @@
-# 前端開發測驗
+# web-dev-front-end
 
-##### 簡介：
+> The front-end part of the game dev test
 
-請你為我們的線上賭場首頁，寫一個功能完善及漂亮的遊戲 Grid。
+## Build Setup
 
-這個遊戲網格的用途在於在首頁上顯示我們的拉霸以及賭場遊戲。
+``` bash
+# install dependencies
+npm install
 
-基本上就是在網格內的一連串遊戲，當你 hover 時會出現一個浮動視窗。
+# serve with hot reload at localhost:8080
+npm run dev
 
-這個浮動視窗該有以下兩個按鈕：
+# build for production with minification
+npm run build
 
-1.  一個「寄到手機」的按鈕，當按下後會叫使用者去輸入電話號碼，並把遊戲寄到他們的手機裡。
-2.  一個「更多資訊」的按鈕，當按下後會把使用者帶到遊戲的主要頁面。
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
-##### 要做的事
-
-1.  盡你的所能，創建網格的介面及樣式，越接近給的圖片越好。
-2.  把遊戲的樣子塞進網格裡。
-3.  創建浮動視窗裡按鈕該有的功能跟樣子。
-4.  用你身為開發者的各種創意及技術來提供任何你覺得很棒的改善。
-5.  請提供能動的連結、原始碼。
-
-https://www.mfortune.co.uk/mk/jackpotservice/ 這是你該顯示的列表
-
-##### 進階需求
-
-*   這個網站是一個行動端的賭場，提供精彩的行動端拉霸機。
-*   我們的遊戲經常會有所改變，我們希望能夠讓我們的網站自動化，而不是手動更改。
-*   我們的使用者包含各種瀏覽器、裝置、以及作業系統。
-*   這個網站每天會被許多人瀏覽、所以內容小、速度快是很重要的。
-*   你只能在網格內使用圖片。
-*   請使用開發者的最佳實踐、以及各種 design pattern。
-*   請使用各種你喜愛的 transition、animation。
-*   允許使用：HTML、CSS 預處理器、JS、PHP、AJAX、JSON、CURL、GIT。
-
-參考圖片 ![](https://i.imgur.com/mHg4Gjp.png)
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
