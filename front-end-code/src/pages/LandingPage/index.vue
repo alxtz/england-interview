@@ -59,13 +59,13 @@
               >
                 <div class="hoverPlate">
                   <h2 class="gameName">{{tapeItem.gameName}}</h2>
-                  <button
+                  <a
+                    target="_blank"
                     class="moreButton"
-                    type="button"
-                    name="button"
+                    v-bind:href="tapeItem.gamePageURL"
                   >
                     MORE INFO
-                  </button>
+                  </a>
                   <button
                     class="sendButton"
                     type="button"
@@ -95,13 +95,13 @@
               >
                 <div class="hoverPlate">
                   <h2 class="gameName">{{tapeItem.gameName}}</h2>
-                  <button
+                  <a
+                    target="_blank"
                     class="moreButton"
-                    type="button"
-                    name="button"
+                    v-bind:href="tapeItem.gamePageURL"
                   >
                     MORE INFO
-                  </button>
+                  </a>
                   <button
                     class="sendButton"
                     type="button"
