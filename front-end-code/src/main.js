@@ -6,9 +6,11 @@ import router from './router'
 
 // libs
 import VueResource from 'vue-resource'
+import VueSweetalert2 from 'vue-sweetalert2'
 
 // lib uses
 Vue.use(VueResource)
+Vue.use(VueSweetalert2)
 
 Vue.config.productionTip = false
 

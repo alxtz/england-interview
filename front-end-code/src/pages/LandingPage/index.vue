@@ -176,16 +176,30 @@
         return bufferList.concat(bufferList)
       },
       sendMessage (messageData) {
-        console.log('we try to send', messageData, 'to backend')
-        this.$http.post(`${apiConfig.api_url}/send`, messageData)
-          .then(
-            response => {
-              return response.body
-            },
-            error => {
-              console.log(error)
-            }
-          )
+        this.$swal({
+          title: 'Input your phone number!',
+          input: 'tel',
+          showCancelButton: true,
+          confirmButtonText: 'Submit',
+          allowOutsideClick: false
+        }).then(tel => {
+          console.log('we try to send', messageData, 'to backend')
+          messageData.tel = tel
+          this.$http.post(`${apiConfig.api_url}/send`, messageData)
+            .then(
+              response => {
+                this.$swal({
+                  type: 'success',
+                  title: 'Check your messages!',
+                  html: 'Game sent to: ' + tel
+                })
+                return response.body
+              },
+              error => {
+                console.log(error)
+              }
+            )
+        })
       }
     }
   }
