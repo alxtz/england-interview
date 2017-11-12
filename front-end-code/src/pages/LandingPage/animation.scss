@@ -1,0 +1,10 @@
+@keyframes example {
+  from { top: 448px;}
+  to   { top: -448px;}
+}
+.tape {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
