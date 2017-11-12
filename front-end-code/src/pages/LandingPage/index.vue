@@ -1,109 +1,44 @@
 <template>
   <div class="container">
+    <button
+      class="playButton"
+      type="button"
+      name="button"
+      @click="playing = !playing"
+    >
+      {{playButtonText}}
+    </button>
     <div class="slotWrapper">
       <div class="slotItem">
         <div class="slotBlackBorder">
           <div class="ghostBlack">
           </div>
           <div class="payload">
-            <div class="tape">
+            <div class="tape" :class="{'animate': playing}">
               <div
+                v-for="tapeItem in slotListFirst"
                 class="gridItem"
                 :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/2822-60-vegas-vegas.png)`
+                  'background-image': `url(${tapeItem.gameGridImage})`
                 }"
               >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4703-60-cat-and-mouse.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4782-60-snakes-and-ladders.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4689-60-burger-man.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4764-60-which-witch.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4697-60-buster-safe.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/2326-60-quest-for-fire.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/2822-60-vegas-vegas.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4703-60-cat-and-mouse.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4782-60-snakes-and-ladders.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4689-60-burger-man.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4764-60-which-witch.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/4697-60-buster-safe.png)`
-                }"
-              >
-              </div>
-              <div
-                class="gridItem"
-                :style="{
-                  'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/2326-60-quest-for-fire.png)`
-                }"
-              >
+                <div class="hoverPlate">
+                  <h2 class="gameName">{{tapeItem.gameName}}</h2>
+                  <a
+                    target="_blank"
+                    class="moreButton"
+                    v-bind:href="tapeItem.gamePageURL"
+                  >
+                    MORE INFO
+                  </a>
+                  <button
+                    class="sendButton"
+                    type="button"
+                    name="button"
+                  >
+                    SEND TO MOBILE
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -114,6 +49,33 @@
           <div class="ghostBlack">
           </div>
           <div class="payload">
+            <div class="tape" :class="{'animate': playing}">
+              <div
+                v-for="tapeItem in slotListSecond"
+                class="gridItem"
+                :style="{
+                  'background-image': `url(${tapeItem.gameGridImage})`
+                }"
+              >
+                <div class="hoverPlate">
+                  <h2 class="gameName">{{tapeItem.gameName}}</h2>
+                  <button
+                    class="moreButton"
+                    type="button"
+                    name="button"
+                  >
+                    MORE INFO
+                  </button>
+                  <button
+                    class="sendButton"
+                    type="button"
+                    name="button"
+                  >
+                    SEND TO MOBILE
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -123,12 +85,32 @@
 
           </div>
           <div class="payload">
-            <div
-              class="gridItem"
-              :style="{
-                'background-image': `url(https://secure.mfortune.co.uk/cdn2/img//images/2822-60-vegas-vegas.png)`
-              }"
-            >
+            <div class="tape" :class="{'animate': playing}">
+              <div
+                v-for="tapeItem in slotListThird"
+                class="gridItem"
+                :style="{
+                  'background-image': `url(${tapeItem.gameGridImage})`
+                }"
+              >
+                <div class="hoverPlate">
+                  <h2 class="gameName">{{tapeItem.gameName}}</h2>
+                  <button
+                    class="moreButton"
+                    type="button"
+                    name="button"
+                  >
+                    MORE INFO
+                  </button>
+                  <button
+                    class="sendButton"
+                    type="button"
+                    name="button"
+                  >
+                    SEND TO MOBILE
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -146,9 +128,15 @@
     name: 'LandingPage',
     data () {
       return {
+        playing: false,
         slotListFirst: [],
         slotListSecond: [],
         slotListThird: []
+      }
+    },
+    computed: {
+      playButtonText () {
+        return this.playing ? 'Stop' : 'Play'
       }
     },
     created () {
@@ -164,19 +152,26 @@
           }
         )
         .then(
-          list => {
-            console.log(list)
-            const shuffledFirst = _.shuffle(list)
-            this.slotListFirst = shuffledFirst.concat(shuffledFirst)
-            const shuffledSecond = _.shuffle(list)
-            this.slotListSecond = shuffledSecond.concat(shuffledSecond)
-            const shuffledThird = _.shuffle(list)
-            this.slotListThird = shuffledThird.concat(shuffledThird)
+          apiList => {
+            this.slotListFirst = this.generateRand14(apiList)
+            this.slotListSecond = this.generateRand14(apiList)
+            this.slotListThird = this.generateRand14(apiList)
           },
           error => {
             console.log(error)
           }
         )
+    },
+    methods: {
+      generateRand14 (apiList) {
+        let bufferList = []
+        for (let i = 0; i < 7; i++) {
+          let randomIndex = _.random(apiList.length - 1)
+          bufferList.push(apiList[randomIndex])
+          apiList.splice(randomIndex, 1)
+        }
+        return bufferList.concat(bufferList)
+      }
     }
   }
 </script>
