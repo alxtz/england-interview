@@ -140,7 +140,7 @@
     },
     computed: {
       playButtonText () {
-        return this.playing ? 'Stop' : 'Play'
+        return this.playing ? 'Stop!' : 'Roll!'
       }
     },
     created () {
