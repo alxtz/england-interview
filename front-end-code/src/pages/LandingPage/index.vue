@@ -35,6 +35,7 @@
                     class="sendButton"
                     type="button"
                     name="button"
+                    @click="sendMessage(tapeItem)"
                   >
                     SEND TO MOBILE
                   </button>
@@ -70,6 +71,7 @@
                     class="sendButton"
                     type="button"
                     name="button"
+                    @click="sendMessage(tapeItem)"
                   >
                     SEND TO MOBILE
                   </button>
@@ -106,6 +108,7 @@
                     class="sendButton"
                     type="button"
                     name="button"
+                    @click="sendMessage(tapeItem)"
                   >
                     SEND TO MOBILE
                   </button>
@@ -124,6 +127,7 @@
 
 <script>
   import _ from 'lodash'
+  import apiConfig from '@/app-config/api'
   export default {
     name: 'LandingPage',
     data () {
@@ -144,7 +148,6 @@
       this.$http.get('https://www.mfortune.co.uk/mk/jackpotservice/')
         .then(
           response => {
-            console.log(response)
             return response.body
           },
           error => {
@@ -171,6 +174,18 @@
           apiList.splice(randomIndex, 1)
         }
         return bufferList.concat(bufferList)
+      },
+      sendMessage (messageData) {
+        console.log('we try to send', messageData, 'to backend')
+        this.$http.post(`${apiConfig.api_url}/send`, messageData)
+          .then(
+            response => {
+              return response.body
+            },
+            error => {
+              console.log(error)
+            }
+          )
       }
     }
   }
